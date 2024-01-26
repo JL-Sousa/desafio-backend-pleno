@@ -10,3 +10,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+  localstack:
+    image: localstack/localstack
+    environment:
+      - SERVICES=sqs
+    ports:
+      - "4566:4566"

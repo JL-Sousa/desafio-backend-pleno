@@ -1,8 +1,10 @@
 package com.tecsoftblue.desafioanotaai.services;
 
+import com.tecsoftblue.desafioanotaai.domain.category.Category;
 import com.tecsoftblue.desafioanotaai.domain.category.CategoryDTO;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface ICategoryService {
 
@@ -13,4 +15,6 @@ public interface ICategoryService {
     CategoryDTO update(String id, CategoryDTO categoryData);
 
     void delete(String id);
+
+    Optional<Category> getById(String id);
 }

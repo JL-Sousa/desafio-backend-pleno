@@ -8,6 +8,7 @@ import com.tecsoftblue.desafioanotaai.repositories.CategoryRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -56,6 +57,11 @@ public class CategoryServiceImpl implements ICategoryService{
         } catch (EmptyResultDataAccessException ex) {
             throw new CategoryNotFoundException("Categoria não encontrada com o ID: " + id);
         }
+    }
+
+    @Override
+    public Optional<Category> getById(String id) {
+        return this.repository.findById(id);
     }
 
     private CategoryDTO convertToDTO(Category cat) {
